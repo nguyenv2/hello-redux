@@ -2,7 +2,7 @@ import C from './constants';
 import appReducer from './store/reducers';
 import initialState from './initialState.json';
 
-let state = initialState;
+let state = initialState
 
 console.log(`
 
@@ -13,7 +13,7 @@ console.log(`
 	fetching: ${state.resortNames.fetching}
 	suggestions: ${state.resortNames.suggestions}
 
-`);
+`)
 
 
 state = appReducer(state, {
@@ -34,7 +34,7 @@ state = appReducer(state, {
 state = appReducer(state, {
 	type: C.CHANGE_SUGGESTIONS,
 	payload: ["Mt Tallac", "Mt Hood", "Mt Shasta"]
-});
+})
 
 
 
@@ -48,7 +48,7 @@ console.log(`
 	fetching: ${state.resortNames.fetching}
 	suggestions: ${state.resortNames.suggestions}
 
-`);
+`)
 
 
 
