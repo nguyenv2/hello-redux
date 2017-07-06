@@ -1,0 +1,33 @@
+module.exports = {
+	entry:"./src/index.js",
+	output: {
+		path: "/dist/assets",
+		filename: "bundle.js",
+		publicPath: "assets"
+	},
+	devServer: {
+		inline: true,
+		contentBase: "./dist",
+		port: 3000
+	},
+	module: {
+		rules: [
+                {
+                    test: /\.js?$/,
+                    exclude: '/node_modules/',
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [ [ 'es2015', { modules: false } ], 'stage-0']
+                        }
+                    }
+                },{
+                    test: /\.json?$/,
+                    exclude: '/node_modules/',
+                    use: {
+                        loader: 'json-loader'
+                    }
+                }
+            ]
+	}
+};
